@@ -1,0 +1,159 @@
+<mujoco model="arc">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <option timestep="0.0002" />
+  <asset>
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component61" file="Component61.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component51" file="Component51.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component41" file="Component41.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component22" file="Component22.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component23" file="Component23.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component21" file="Component21.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component31" file="Component31.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link">
+      <inertial pos="0 0 -0.0925" quat="0.5 0.5 -0.5 0.5" mass="0.0978476" diaginertia="4.08851e-05 2.06464e-05 2.06464e-05"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="base_link"/>
+      <geom type="mesh" mesh="base_link"/>
+      <body name="Component61" pos="0 0 -0.09">
+        <inertial pos="0.0359675 0.0207659 0.0424029" quat="0.476671 0.150947 0.261447 0.825618" mass="0.105512" diaginertia="0.000161051 0.000153504 9.31013e-06"/>
+        <geom pos="0 0 0.09" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component61"/>
+        <geom pos="0 0 0.09" quat="1 0 0 0" type="mesh" mesh="Component61"/>
+        <body name="Component51" pos="0 0 0.01">
+          <inertial pos="-0.0360088 0.0207897 0.0370362" quat="0.818328 -0.283443 -0.163646 0.472462" mass="0.0980483" diaginertia="0.000132993 0.000125455 9.17599e-06"/>
+          <joint name="Revolute_2" pos="0 0 0" axis="0 0 -1"/>
+          <geom pos="0 0 0.08" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component51"/>
+          <geom pos="0 0 0.08" quat="1 0 0 0" type="mesh" mesh="Component51"/>
+          <body name="Component41" pos="0 0 0.01">
+            <inertial pos="0 -0.038518 0.031021" quat="0.926817 0.375514 0 0" mass="0.0928426" diaginertia="9.54536e-05 9.14174e-05 5.588e-06"/>
+            <joint name="Revolute_3" pos="0 0 0" axis="0 0 -1"/>
+            <geom pos="0 0 0.07" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component41"/>
+            <geom pos="0 0 0.07" type="mesh" mesh="Component41"/>
+            <body name="Component21" pos="0 -0.0592 0.075">
+              <inertial pos="0.0335557 0.0256277 7.45053e-11" quat="-0.270598 0.653281 0.270598 0.653281" mass="0.0791885" diaginertia="6.23778e-05 5.8702e-05 4.99345e-06"/>
+              <joint name="Revolute_6" pos="0 0 0" axis="0 -1 0"/>
+              <geom pos="0 0.0592 -0.005" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component21"/>
+              <geom pos="0 0.0592 -0.005" quat="1 0 0 0" type="mesh" mesh="Component21"/>
+              <body name="Component31" pos="0.059183 0.059167 0">
+                <inertial pos="-0.0586589 -0.00070055 -2.18932e-05" quat="-0.205549 0.676568 0.205558 0.676573" mass="0.208517" diaginertia="0.000345993 0.000178898 0.000170485"/>
+                <joint name="Revolute_7" pos="0 0 0" axis="1 0 0"/>
+                <geom pos="-0.059183 3.3e-05 -0.005" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component31"/>
+
+
+                <joint name="joint" pos="-0.085 0.045 0" axis="-1 1.5 0"/>
+
+                <joint name="joint1" pos="-0.086 -0.05 0" axis="-1 -1.8 0"/>
+
+                <geom pos="-0.059183 3.3e-05 -0.005" quat="1 0 0 0" type="mesh" mesh="Component31"/>
+              </body>
+            </body>
+          </body>
+          <body name="Component23" pos="-0.051269 0.0296 0.085">
+            <inertial pos="0.00541671 -0.041874 7.45053e-11" quat="0.430459 0.560986 -0.430459 0.560986" mass="0.0791885" diaginertia="6.23778e-05 5.8702e-05 4.99345e-06"/>
+            <joint name="Revolute_5" pos="0 0 0" axis="-0.866025 0.5 0"/>
+            <geom pos="0.051269 -0.0296 -0.005" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component23"/>
+            <geom pos="0.051269 -0.0296 -0.005" quat="1 0 0 0" type="mesh" mesh="Component23"/>
+          </body>
+        </body>
+        <body name="Component22" pos="0.051269 0.0296 0.095">
+          <inertial pos="-0.0389724 0.0162462 7.45053e-11" quat="0.092296 0.701057 -0.092296 0.701057" mass="0.0791885" diaginertia="6.23778e-05 5.8702e-05 4.99345e-06"/>
+          <joint name="Revolute_4" pos="0 0 0" axis="0.866025 0.5 0"/>
+          <geom pos="-0.051269 -0.0296 -0.005" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component22"/>
+          <geom pos="-0.051269 -0.0296 -0.005" quat="1 0 0 0" type="mesh" mesh="Component22"/>
+          
+
+        </body>
+      </body>
+    </body>
+  </worldbody>
+   <equality>
+        <connect name="kinematic_link1" active="true" body1="Component31" body2="Component22" anchor="-0.09 0.05 0" />
+        <connect name="kinematic_link3" active="true" body1="Component21" body2="Component31" anchor="0.07 0.05915 0" />
+        <connect name="kinematic_link4" active="true" body1="Component23" body2="Component31" anchor="0.0187 -0.09 0" />
+    </equality>
+
+
+
+ <actuator>
+        <motor name="1_motor" joint="Revolute_2" gear="10" />
+        <motor name="2_motor" joint="Revolute_3" gear="10" />
+
+        <motor name="3_motor" joint="Revolute_6" gear="100" />
+        <motor name="4_motor" joint="Revolute_7" gear="10" />
+
+        <motor name="5_motor" joint="Revolute_4" gear="10" />
+        <motor name="6_motor" joint="Revolute_5" gear="10" />
+    </actuator>
+
+
+
+<contact>
+        <exclude body1="base_link" body2="Component61"/>
+        <exclude body1="base_link" body2="Component51"/>
+        <exclude body1="base_link" body2="Component41"/>
+        <exclude body1="base_link" body2="Component31"/>
+        <exclude body1="base_link" body2="Component21"/>
+        <exclude body1="base_link" body2="Component22"/>
+        <exclude body1="base_link" body2="Component23"/>
+
+
+
+        <exclude body1="Component61" body2="Component51"/>
+        <exclude body1="Component61" body2="Component41"/>
+        <exclude body1="Component61" body2="Component31"/>
+        <exclude body1="Component61" body2="Component21"/>
+        <exclude body1="Component61" body2="Component22"/>
+        <exclude body1="Component61" body2="Component23"/>
+
+
+        <exclude body1="Component51" body2="Component61"/>
+        <exclude body1="Component51" body2="Component41"/>
+        <exclude body1="Component51" body2="Component31"/>
+        <exclude body1="Component51" body2="Component21"/>
+        <exclude body1="Component51" body2="Component22"/>
+        <exclude body1="Component51" body2="Component23"/>
+
+
+        <exclude body1="Component41" body2="Component61"/>
+        <exclude body1="Component41" body2="Component51"/>
+        <exclude body1="Component41" body2="Component31"/>
+        <exclude body1="Component41" body2="Component21"/>
+        <exclude body1="Component41" body2="Component22"/>
+        <exclude body1="Component41" body2="Component23"/>
+        
+
+        <exclude body1="Component31" body2="Component61"/>
+        <exclude body1="Component31" body2="Component51"/>
+        <exclude body1="Component31" body2="Component41"/>
+        <exclude body1="Component31" body2="Component21"/>
+        <exclude body1="Component31" body2="Component22"/>
+        <exclude body1="Component31" body2="Component23"/>
+
+
+        <exclude body1="Component21" body2="Component61"/>
+        <exclude body1="Component21" body2="Component51"/>
+        <exclude body1="Component21" body2="Component41"/>
+        <exclude body1="Component21" body2="Component31"/>
+        <exclude body1="Component21" body2="Component22"/>
+        <exclude body1="base_link" body2="Component23"/>
+
+        <exclude body1="Component22" body2="Component61"/>
+        <exclude body1="Component22" body2="Component51"/>
+        <exclude body1="Component22" body2="Component41"/>
+        <exclude body1="Component22" body2="Component31"/>
+        <exclude body1="Component22" body2="Component21"/>
+        <exclude body1="Component22" body2="Component23"/>
+
+        <exclude body1="Component23" body2="Component61"/>
+        <exclude body1="Component23" body2="Component51"/>
+        <exclude body1="Component23" body2="Component41"/>
+        <exclude body1="Component23" body2="Component31"/>
+        <exclude body1="Component23" body2="Component21"/>
+        <exclude body1="Component23" body2="Component22"/>
+
+
+
+    </contact>
+</mujoco>

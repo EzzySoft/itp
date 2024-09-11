@@ -1,0 +1,130 @@
+<mujoco model="lool">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <option timestep="0.00002" />
+  <asset>
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="crest1" file="crest1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="main1" file="main1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="pipka1" file="pipka1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="left_small1" file="left_small1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="left_link1" file="left_link1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="right_link1" file="right_link1.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link">
+      <inertial pos="-0.00947379 0.0276663 0" quat="0 0.707107 0 0.707107" mass="0.104892" diaginertia="0.000405584 0.000356156 5.64567e-05"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="base_link"/>
+      <geom type="mesh" mesh="base_link"/>
+      <body name="crest1" pos="-0.113948 -0.032467 -0.01">
+        <inertial pos="0.104474 0.0213171 0.01" quat="0.707107 0 0 0.707107" mass="0.0312205" diaginertia="0.000109765 5.75047e-05 5.26525e-05"/>
+        <joint name="Revolute_17" pos="0 .021 .01" axis="-1 0 0"/>
+        <geom pos="0.113948 0.032467 0.01" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="crest1"/>
+        <geom pos="0.113948 0.032467 0.01" quat="1 0 0 0" type="mesh" mesh="crest1"/>
+        <body name="main1" pos="0.104474 0.021317 0.113">
+          <inertial pos="7.13372e-07 -0.0655986 -0.0931912" quat="0.99984 0.0178688 1.00947e-06 7.04172e-06" mass="0.0231773" diaginertia="0.000137886 0.00011774 2.38892e-05"/>
+          <joint name="Revolute_18" pos="0 0 0" axis="0 0 1"/>
+
+
+          <joint name="Revolute_28" pos=".025 -.07 -.045" axis="0.3 -1.5 1.2"/>
+
+          <joint name="Revolute_29" pos="-.025 -.07 -.045" axis="-.2 -1.5 1.2"/>
+
+
+          <geom pos="0.009474 0.01115 -0.103" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="main1"/>
+          <geom pos="0.009474 0.01115 -0.103" type="mesh" mesh="main1"/>
+        </body>
+        <body name="pipka1" pos="0.004474 0.021317 0.01">
+          <inertial pos="0.012308 0.0256207 0.0274747" quat="0.91254 -0.359459 0.181515 -0.0715008" mass="0.00525424" diaginertia="3.65243e-06 3.52979e-06 2.37462e-07"/>
+          <joint name="Revolute_19" pos="0 0 0" axis="-1 0 0"/>
+          <geom pos="0.109474 0.01115 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="pipka1"/>
+          <geom pos="0.109474 0.01115 0" type="mesh" mesh="pipka1"/>
+          <body name="left_link1" pos="0.028403 0.050877 0.054559">
+            <inertial pos="0.0121681 -0.0664584 0.0164823" quat="0.618402 0.678698 -0.127418 0.375118" mass="0.00950586" diaginertia="1.87459e-05 1.8245e-05 1.14443e-06"/>
+            <joint name="Revolute_21" pos="0 0 0" axis="0.707107 -0.482246 -0.517145"/>
+            <geom pos="0.081071 -0.039727 -0.054559" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_link1"/>
+            <geom pos="0.081071 -0.039727 -0.054559" quat="1 0 0 0" type="mesh" mesh="left_link1"/>
+          </body>
+        </body>
+        <body name="left_small1" pos="0.204474 0.021317 0.01">
+          <inertial pos="-0.0123076 0.0256207 0.0274747" quat="0.91254 -0.359459 -0.181515 0.0715008" mass="0.00525424" diaginertia="3.65243e-06 3.52979e-06 2.37462e-07"/>
+          <joint name="Revolute_20" pos="0 0 0" axis="1 0 0"/>
+          <geom pos="-0.090526 0.01115 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_small1"/>
+          <geom pos="-0.090526 0.01115 0" type="mesh" mesh="left_small1"/>
+          <body name="right_link1" pos="-0.028402 0.050877 0.054559">
+            <inertial pos="-0.0124751 -0.0666674 0.0162582" quat="0.618402 0.678698 0.127418 -0.375118" mass="0.00950586" diaginertia="1.87459e-05 1.8245e-05 1.14443e-06"/>
+            <joint name="Revolute_22" pos="0 0 0" axis="-0.707107 -0.482246 -0.517145"/>
+            <geom pos="-0.062124 -0.039727 -0.054559" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_link1"/>
+            <geom pos="-0.062124 -0.039727 -0.054559" quat="1 0 0 0" type="mesh" mesh="right_link1"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+    <actuator>
+        <motor gear=".1" joint="Revolute_18" name="18"/>
+        <motor gear=".1" joint="Revolute_19" name="19"/>
+        <motor gear=".1" joint="Revolute_21" name="21"/>
+        <motor gear=".1" joint="Revolute_20" name="20"/>
+        <motor gear=".1" joint="Revolute_22" name="22"/>
+    </actuator>
+
+   <equality>
+   
+        <connect name="kinematic_link" active="true" body1="main1" body2="right_link1" anchor=".025 -.07 -.045" />
+        <connect name="kinematic_link1" active="true" body1="main1" body2="left_link1" anchor="-.025 -.07 -.045" />
+        <connect name="kinematic_link2" active="true" body1="main1" body2="crest1" anchor="0 0 0" />
+    </equality>
+
+     <contact>
+        <exclude body1="base_link" body2="crest1"/>
+        <exclude body1="base_link" body2="main1"/>
+        <exclude body1="base_link" body2="pipka1"/>
+        <exclude body1="base_link" body2="left_small1"/>
+        <exclude body1="base_link" body2="left_link1"/>
+        <exclude body1="base_link" body2="right_link1"/>
+
+
+
+
+        <exclude body1="crest1" body2="main1"/>
+        <exclude body1="crest1" body2="pipka1"/>
+        <exclude body1="crest1" body2="left_small1"/>
+        <exclude body1="crest1" body2="left_link1"/>
+        <exclude body1="crest1" body2="right_link1"/>
+
+
+
+        <exclude body1="main1" body2="crest1"/>
+        <exclude body1="main1" body2="pipka1"/>
+        <exclude body1="main1" body2="left_small1"/>
+        <exclude body1="main1" body2="left_link1"/>
+        <exclude body1="main1" body2="right_link1"/>
+
+        <exclude body1="pipka1" body2="crest1"/>
+        <exclude body1="pipka1" body2="main1"/>
+        <exclude body1="pipka1" body2="left_small1"/>
+        <exclude body1="pipka1" body2="left_link1"/>
+        <exclude body1="pipka1" body2="right_link1"/>
+
+        <exclude body1="left_small1" body2="crest1"/>
+        <exclude body1="left_small1" body2="main1"/>
+        <exclude body1="left_small1" body2="pipka1"/>
+        <exclude body1="left_small1" body2="left_link1"/>
+        <exclude body1="left_small1" body2="right_link1"/>
+
+        <exclude body1="left_link1" body2="crest1"/>
+        <exclude body1="left_link1" body2="main1"/>
+        <exclude body1="left_link1" body2="pipka1"/>
+        <exclude body1="left_link1" body2="left_small1"/>
+        <exclude body1="left_link1" body2="right_link1"/>
+
+        <exclude body1="right_link1" body2="crest1"/>
+        <exclude body1="right_link1" body2="main1"/>
+        <exclude body1="right_link1" body2="pipka1"/>
+        <exclude body1="right_link1" body2="left_small1"/>
+        <exclude body1="right_link1" body2="left_link1"/>
+
+
+    </contact>
+</mujoco>

@@ -1,0 +1,69 @@
+<mujoco model="simple_example">
+
+    <visual>
+        <headlight ambient="0.5 0.5 0.5" />
+    </visual>
+
+    <asset>
+        <material name="white" rgba="1 1 1 1" />
+    </asset>
+
+    <actuator>
+        <motor gear="10000" joint="shoulder_pitch" name="shoulder_pitch" ctrlrange="-300 300" ctrllimited="true"/>
+        <motor gear="10000" joint="shoulder_roll" name="shoulder_roll" ctrlrange="-300 300" ctrllimited="true"/>
+        <motor gear="10000" joint="shoulder_yaw" name="shoulder_yaw" ctrlrange="-300 300" ctrllimited="true"/>
+        <motor gear="10000" joint="elbow_pitch" name="elbow_pitch" ctrlrange="-300 300" ctrllimited="true"/>
+    </actuator>
+    <worldbody>
+        
+        <body pos="0 0 6" euler="0 0 0">
+            <geom type="box" size="6 6 6" rgba=".7 0 0 1"/>
+            
+            <body pos="0 8.3 0" euler="90 0 0">
+                <joint name="shoulder_pitch" type="hinge" axis="0 0 1" pos="0 0 0"/>
+                <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+                <body pos="0 0 -6.26" euler="90 0 0">
+                    <joint name="shoulder_roll" type="hinge" axis="0 0 1" pos="0 0 0"/>
+                    <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+
+
+                    <body pos="-6.26 0 0" euler="0 90 0">
+                        <joint name="shoulder_yaw" type="hinge" axis="0 0 1" pos="0 0 0"/>
+                        <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+
+                        <body pos="0 4.26 -12.3" euler="90 0 90">
+                        
+                            <geom type="box" size="10 3 .3" rgba="0 .5 .9 1" mass="20"/>
+                        </body>
+
+                        <body pos="0 -4.26 -12.3" euler="90 0 90">
+                            <geom type="box" size="10 3 .3" rgba="0 .5 .9 1" mass="20"/>
+                        </body>
+
+                        <body pos="0 3.13 -22.3" euler="90 0 0">
+                            <geom type="cylinder" size="2 .83" rgba="0 .5 .9 1"/>
+                        </body>
+                        <body pos="0 -3.13 -22.3" euler="90 0 0">
+                            <geom type="cylinder" size="2 .83" rgba="0 .5 .9 1"/>
+                        </body>
+
+                        <body pos="0 0 -22.3" euler="90 0 0">
+                            <joint name="elbow_pitch" type="hinge" axis="0 0 1" pos="0 0 0"/>
+
+                            <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+                                <body pos="0 -12.3 0 " euler="0 0 90">
+                                    <geom type="box" size="10 3 .3" rgba="0 .5 .9 1" mass="20"/>
+                                </body>
+                        </body>
+                    </body>
+                </body>
+                
+            </body>
+        </body>
+
+        
+
+       
+    </worldbody>
+
+</mujoco>

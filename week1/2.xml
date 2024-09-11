@@ -1,0 +1,78 @@
+<mujoco>
+    <option timestep="0.0002" />
+    <asset>
+        <material name="blue_" rgba="0 0 1 1" />
+        <material name="green" rgba="0 1 0 1" />
+        <material name="red__" rgba="1 0 0 1" />
+        <material name="white" rgba="1 1 1 1" />
+    </asset>
+    <worldbody>
+        <body name="left_1" pos="0 0 0">
+            <joint name="left_1_j" pos="0 0 0" axis="0 0 1 " />
+            <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+            <geom type="box" pos="10 0 0" size="10 3 .3" rgba="0 .5 .9 1" mass="20"/>
+            <body name="left_2" pos="20 0 0" euler="0 0 -75">
+                <joint name="left_2_j" pos="0 0 0" axis="0 0 1 " />
+                <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+                <geom type="box" pos="10 0 0" size="10 3 .3" rgba="0 .5 .9 1" mass="20"/>
+                <body name="left_3" pos="20 0 0">
+                </body>
+            </body>
+
+        </body>
+
+
+
+
+        <body name="right_1" pos="0 -40 0">
+            <joint name="right_j_1" pos="0 0 0" axis="0 0 1 " />
+            <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+            <geom type="box" pos="10 0 0" size="10 3 .3" rgba="0 .5 .9 1" mass="20"/>
+            <body name="right_2" pos="20 0 0" euler="0 0 75">
+                <joint name="right_j_2" pos="0 0 0" axis="0 0 1 " />
+                <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+                <geom type="box" pos="10 0 0" size="10 3 .3" rgba="0 .5 .9 1" mass="20"/>
+                <body name="right_3" pos="20 0 0">
+                    <joint name="right_j_3" pos="0 0 0" axis="0 0 1 " />
+                    <geom type="cylinder" size="3.96 2.3" rgba="0 0 .9 1" mass="65"/>
+                </body>
+            </body>
+
+        </body>
+    </worldbody>
+    <equality>
+        <connect name="kinematic_link2" active="true" body1="right_3" body2="left_3" anchor="0 0 0" />
+    </equality>
+
+
+
+     <actuator>
+        <motor name="1_motor" joint="right_j_1" gear="1000" ctrlrange="-300 300" ctrllimited="true"/>
+        <motor name="2_motor" joint="left_1_j" gear="1000" ctrlrange="-300 300" ctrllimited="true"/>
+    </actuator>
+    <contact>
+        <exclude body1="left_3" body2="left_1"/>
+        <exclude body1="left_3" body2="left_2"/>
+        <exclude body1="left_3" body2="right_1"/>
+        <exclude body1="left_3" body2="right_2"/>
+        <exclude body1="left_3" body2="right_3"/>
+
+
+        <exclude body1="left_2" body2="left_1"/>
+        <exclude body1="left_2" body2="right_1"/>
+        <exclude body1="left_2" body2="right_2"/>
+        <exclude body1="left_2" body2="right_3"/>
+
+
+        <exclude body1="left_1" body2="right_1"/>
+        <exclude body1="left_1" body2="right_2"/>
+        <exclude body1="left_1" body2="right_3"/>
+
+        <exclude body1="right_1" body2="right_3"/>
+        
+
+
+        
+
+    </contact>
+</mujoco>
